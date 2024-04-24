@@ -1,0 +1,159 @@
+<?xml version=1.0?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <material name="white">
+        <color rgba="1.0 1.0 1.0 1.0"/>
+    </material>
+
+    <material name="orange">
+        <color rgba="1.0 0.3 0.1 1.0"/>
+    </material>
+
+    <material name="blue">
+        <color rgba="0.2 0.2 1.0 1.0"/>
+    </material>
+    
+    <material name="black">
+        <color rgba="0.0 0.0 0.0 1.0"/>
+    </material>
+    
+    <!-- BASE LINK -->
+
+    <link name="base_link">
+        
+    </link>
+
+    <!-- CHASSIS LINK -->
+    
+    <joint name="chassis_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="chassis"/>
+        <origin xyz="-0.2 0.0 0.0"/>
+        
+    </joint>
+
+    <link name="chassis">
+        <visual>
+            <origin xyz="0.2 0.0 0.0225"/>
+            <geometry>
+                <box size="0.4 0.2 0.045"/>
+                <material name="white"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.2 0.0 0.0225"/>
+            <geometry>
+                <box size="0.4 0.2 0.045"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- LEFT WHEEL LINK -->
+
+    <joint name="left_wheel_joint" type="continous">
+        <parent link="base_link"/>
+        <child link="left_wheel"/>
+        <origin xyz="-0.03 0.116 -0.0255" rpy="-${pi/2} 0.0 0.0"/>
+        <axis xyz="0.0 0.0 1.0"/>
+    </joint>
+
+    <link name="left_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="0.525" length="0.045"/>
+                <material name="blue"/>
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.525" length="0.045"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- RIGHT WHEEL LINK -->
+
+    <joint name="right_wheel_joint" type="continous">
+        <parent link="base_link"/>
+        <child link="right_wheel"/>
+        <origin xyz="-0.03 -0.116 -0.0255" rpy="${pi/2} 0.0 0.0"/>
+        <axis xyz="0.0 0.0 -1.0"/>
+    </joint>
+
+    <link name="right_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="0.525" length="0.045"/>
+                <material name="blue"/>
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.525" length="0.045"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <!-- CASTER WHEEL LINK -->
+
+    <joint name="cws_1_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="cws_1"/>
+        <origin xyz="0.39 0.0 -0.015" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="cws_1">
+        <visual>
+            <geometry>
+                <box size="0.02 0.068 0.03"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.02 0.068 0.03"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="cws_2_joint" type="fixed">
+        <parent link="cws_1"/>
+        <child link="cws_2"/>
+        <origin xyz="0.065 0.0 -0.01" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="cws_2">
+        <visual>
+            <geometry>
+                <box size="0.11 0.068 0.01"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.11 0.068 0.01"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="caster_wheel_joint" type="fixed">
+        <parent link="cws_2"/>
+        <child link="caster_wheel"/>
+        <origin xyz="0.0 0.0 -0.005" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="caster_wheel">
+        <visual>
+            <geometry>
+                <sphere radius="0.048"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <geometry>
+                <sphere radius="0.048"/>
+            </geometry>
+        </collision>
+    </link>
+
+</robot>
