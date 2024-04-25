@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="inertial_macros.xacro"/>
+    
+    <!-- PROFILE LINK -->
+    
+    <joint name="pro1_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="pro1"/>
+        <origin xyz="-0.135 0.0 0.1905"/>
+        
+    </joint>
+
+    <link name="pro1">
+        <visual>
+            <geometry>
+                <box size="0.02 0.02 0.24"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.02 0.02 0.24"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.05" x="0.02" y="0.02" z="0.24">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="pro2_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="pro2"/>
+        <origin xyz="0.22 0.0 0.1905"/>
+        
+    </joint>
+
+    <link name="pro2">
+        <visual>
+            <geometry>
+                <box size="0.02 0.02 0.24"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.02 0.02 0.24"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.05" x="0.02" y="0.02" z="0.24">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="pro3_joint" type="fixed">
+        <parent link="pro1"/>
+        <child link="pro3"/>
+        <origin xyz="0.0 0.0 0.13"/>
+        
+    </joint>
+
+    <link name="pro3">
+        <visual>
+            <geometry>
+                <box size="0.02 0.255 0.02"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.02 0.255 0.02"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.05" x="0.02" y="0.255" z="0.02">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="pro4_joint" type="fixed">
+        <parent link="pro2"/>
+        <child link="pro4"/>
+        <origin xyz="0.0 0.0 0.13"/>
+        
+    </joint>
+
+    <link name="pro4">
+        <visual>
+            <geometry>
+                <box size="0.02 0.255 0.02"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.02 0.255 0.02"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.05" x="0.02" y="0.255" z="0.02">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="pro5_joint" type="fixed">
+        <parent link="pro3"/>
+        <child link="pro5"/>
+        <origin xyz="0.1775 -0.1375 0.0"/>
+        
+    </joint>
+
+    <link name="pro5">
+        <visual>
+            <geometry>
+                <box size="0.335 0.02 0.02"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.335 0.02 0.02"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.05" x="0.335" y="0.02" z="0.02">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </xacro:inertial_box>
+    </link>
+
+    <joint name="pro6_joint" type="fixed">
+        <parent link="pro3"/>
+        <child link="pro6"/>
+        <origin xyz="0.1775 0.1375 0.0"/>
+        
+    </joint>
+
+    <link name="pro6">
+        <visual>
+            <geometry>
+                <box size="0.335 0.02 0.02"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.335 0.02 0.02"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_box mass="0.05" x="0.335" y="0.02" z="0.02">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        </xacro:inertial_box>
+    </link>
+
+</robot>
