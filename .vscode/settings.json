@@ -1,0 +1,20 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/ros-pc/dev_ws/build/serial_motor_demo",
+        "/home/ros-pc/dev_ws/install/serial_motor_demo/lib/python3.10/site-packages",
+        "/home/ros-pc/dev_ws/install/serial_motor_demo_msgs/local/lib/python3.10/dist-packages",
+        "/home/ros-pc/dev_ws/build/goal_data_pub",
+        "/home/ros-pc/dev_ws/install/goal_data_pub/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/ros-pc/dev_ws/build/serial_motor_demo",
+        "/home/ros-pc/dev_ws/install/serial_motor_demo/lib/python3.10/site-packages",
+        "/home/ros-pc/dev_ws/install/serial_motor_demo_msgs/local/lib/python3.10/dist-packages",
+        "/home/ros-pc/dev_ws/build/goal_data_pub",
+        "/home/ros-pc/dev_ws/install/goal_data_pub/lib/python3.10/site-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
+}
