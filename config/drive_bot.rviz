@@ -10,6 +10,7 @@ Panels:
         - /RobotModel1
         - /LaserScan1
         - /Map1
+        - /Map1/Topic1
       Splitter Ratio: 0.5
     Tree Height: 719
   - Class: rviz_common/Selection
@@ -105,37 +106,36 @@ Visualization Manager:
       Show Names: false
       Tree:
         map:
-          {}
-        odom:
-          base_link:
-            base_footprint:
-              {}
-            chassis:
-              cws_1:
-                cws_2:
-                  caster_wheel:
-                    {}
-                  laser_frame:
-                    {}
-            left_motor:
-              left_shaft:
+          odom:
+            base_link:
+              base_footprint:
                 {}
-            left_wheel:
-              {}
-            pro1:
-              pro3:
-                pro5:
+              chassis:
+                cws_1:
+                  cws_2:
+                    caster_wheel:
+                      {}
+                    laser_frame:
+                      {}
+              left_motor:
+                left_shaft:
                   {}
-                pro6:
+              left_wheel:
+                {}
+              pro1:
+                pro3:
+                  pro5:
+                    {}
+                  pro6:
+                    {}
+              pro2:
+                pro4:
                   {}
-            pro2:
-              pro4:
+              right_motor:
+                right_shaft:
+                  {}
+              right_wheel:
                 {}
-            right_motor:
-              right_shaft:
-                {}
-            right_wheel:
-              {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -299,23 +299,23 @@ Visualization Manager:
       Name: Map
       Topic:
         Depth: 5
-        Durability Policy: Volatile
+        Durability Policy: Transient Local
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: ""
+        Value: /map
       Update Topic:
         Depth: 5
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: ""
+        Value: /map_updates
       Use Timestamp: false
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: odom
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:
@@ -358,7 +358,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 10
+      Distance: 19.73822784423828
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
